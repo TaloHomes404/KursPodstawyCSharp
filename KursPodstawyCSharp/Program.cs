@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace KursPodstawyCSharp;
 
@@ -144,6 +145,11 @@ internal class Program
 
         #endregion
 
+        //Regex vals
+        Regex regex = new Regex(@"[a-z0-9]+\\.?[a-z0-9]@[a-z]+\\.[a-z]{2,3}$");
+        string email = "testo.wy@gmail.com";
+
+        if (regex.IsMatch(email)) Console.WriteLine("Email is correct");
     }
 }
 
